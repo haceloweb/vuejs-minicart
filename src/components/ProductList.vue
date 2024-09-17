@@ -15,7 +15,7 @@
               class="py-3 px-5 flex items-center justify-between bg-gray-100"
             >
               <p class="font-bold">{{ product.name }}</p>
-              <p class="text-gray-900">{{ product.price }}</p>
+              <p class="text-gray-900">${{ product.price }}</p>
             </div>
             <AddToCart :product="product" />
           </div>
@@ -72,7 +72,9 @@ export default {
             id: product.node.id,
             name: product.node.title,
             imageURL: product.node.featuredImage.url,
-            price: "$" + product.node.variants.edges[0].node.priceV2.amount,
+            price: parseFloat(
+              product.node.variants.edges[0].node.priceV2.amount
+            ).toFixed(2),
           });
         });
       }

@@ -57,6 +57,13 @@
           <CartItem :cartItem="cartItem" />
         </li>
       </ul>
+      <div class="text-right">
+        <span class="font-bold"
+          >Cart Total: ${{
+            parseFloat($store.state.cartTotal).toFixed(2)
+          }}</span
+        >
+      </div>
     </div>
   </div>
 </template>

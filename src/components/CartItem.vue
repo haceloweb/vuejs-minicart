@@ -4,7 +4,9 @@
     <div class="w-[300px]">
       <div class="py-3 px-5 flex justify-between">
         <p class="font-bold">{{ cartItem.name }}</p>
-        <p class="text-gray-900">{{ cartItem.price }}</p>
+        <p class="text-gray-900">
+          ${{ parseFloat(cartItem.price).toFixed(2) }}
+        </p>
       </div>
       <div class="py-3 px-5 flex justify-between items-end">
         <div class="flex justify-start">
