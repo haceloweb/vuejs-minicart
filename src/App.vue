@@ -1,30 +1,47 @@
-<template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
-</template>
-
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Work Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
 }
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+.disabled {
+  opacity: 0.6;
+  pointer-events: none;
 }
 </style>
+
+<template>
+  <div id="app">
+    <nav id="header" class="w-full z-30 top-0 py-1">
+      <div
+        class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-6 py-3"
+      >
+        <div class="order-1 md:order-2">
+          <a
+            class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl"
+            href="#"
+          >
+            DUTCH CHALLENGE STORE
+          </a>
+        </div>
+
+        <MiniCart />
+      </div>
+    </nav>
+    <router-view />
+  </div>
+</template>
+
+<script>
+import MiniCart from "@/components/MiniCart.vue";
+export default {
+  name: "App",
+  components: {
+    MiniCart,
+  },
+  async mounted() {
+    await this.$store.commit("initialiseStore");
+  },
+};
+</script>
