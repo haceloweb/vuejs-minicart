@@ -21,7 +21,6 @@ export default {
   },
   methods: {
     async addToCart() {
-      console.log(this.product);
       this.loading = true;
       await this.$store.commit("addToCart", {
         product: { ...this.product, qty: 1 },
