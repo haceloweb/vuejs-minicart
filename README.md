@@ -1,4 +1,6 @@
-# dutch-challenge
+# Vue JS Shopify Storefront 
+
+Simple Shopify product feed with a persistent cart.
 
 ## Project setup
 ```
