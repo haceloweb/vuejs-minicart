@@ -22,7 +22,7 @@
             class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl"
             href="#"
           >
-            DUTCH CHALLENGE STORE
+            VUEJS SHOPIFY API STOREFRONT
           </a>
         </div>
 
